@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Option = "2021-2022 Season Roster";
+}
+
+@model IndexViewModel
+
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Phone Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model.Bowlers)
+        {
+        <tr>
+            <td>@x.BowlerFirstName @x.BowlerMiddleInit @x.BowlerLastName </td>
+            <td>@x.BowlerAddress</td>
+            <td>@x.BowlerCity</td>
+            <td>@x.BowlerState</td>
+            <td>@x.BowlerZip</td>
+            <td>@x.BowlerPhoneNumber</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<div page-info="@Model.PageNumberingInfo" page-url-team="@Model.Team" class="text-white btn btn-sm">
+
+</div>
